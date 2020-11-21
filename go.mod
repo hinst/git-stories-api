@@ -1,1 +1,1 @@
-module "git-stories-api"
+module "github.com/hinst/git-stories-api"
