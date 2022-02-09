@@ -4,21 +4,21 @@ import (
 	"time"
 )
 
-type DetailedLogEntryRow struct {
+type RepositoryLogEntry struct {
 	Time       time.Time
 	Parents    []ParentInfoEntry
 	CommitHash string
 	AuthorName string
 }
 
-type DetailedLogEntryRows []DetailedLogEntryRow
+type RepositoryLogEntries []RepositoryLogEntry
 
 type ParentInfoEntry struct {
 	CommitHash  string
 	DiffSummary []DiffSummaryRow
 }
 
-func (rows DetailedLogEntryRows) FindByCommitHash(commitHash string) *DetailedLogEntryRow {
+func (rows RepositoryLogEntries) FindByCommitHash(commitHash string) *RepositoryLogEntry {
 	for _, row := range rows {
 		if row.CommitHash == commitHash {
 			return &row
