@@ -8,6 +8,7 @@ type DetailedLogEntryRow struct {
 	Time       time.Time
 	Parents    []ParentInfoEntry
 	CommitHash string
+	AuthorName string
 }
 
 type DetailedLogEntryRows []DetailedLogEntryRow
