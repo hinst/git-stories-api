@@ -18,8 +18,7 @@ type DiffSummaryRow struct {
 
 var _ fmt.Stringer = &DiffSummaryRow{}
 
-func (this *DiffSummaryRow) String() string {
-	return this.FilePath +
-		" +" + strconv.Itoa(this.InsertionCount) + " -" + strconv.Itoa(this.DeletionCount)
+func (row *DiffSummaryRow) String() string {
+	return row.FilePath +
+		" +" + strconv.Itoa(row.InsertionCount) + " -" + strconv.Itoa(row.DeletionCount)
 }
-
