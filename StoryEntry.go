@@ -2,13 +2,13 @@ package git_stories_api
 
 import "time"
 
-type StoryEntryChangeset struct {
-	Time        time.Time
-	CommitHash  string // Source commit hash
-	FileEntries []StoryEntryFileChange
+type StoryEntryFileChange struct {
+	SourceFilePath string `json:"sourceFilePath"`
+	Description    string `json:"description"`
 }
 
-type StoryEntryFileChange struct {
-	SourceFilePath string
-	Description    string
+type StoryEntryChangeset struct {
+	Time        time.Time              `json:"time"`
+	CommitHash  string                 `json:"commitHash"`
+	FileEntries []StoryEntryFileChange `json:"fileEntries"`
 }
