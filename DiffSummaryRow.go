@@ -11,9 +11,9 @@ const (
 )
 
 type DiffSummaryRow struct {
-	FilePath       string
-	InsertionCount int
-	DeletionCount  int
+	FilePath       string `json:"filePath"`
+	InsertionCount int    `json:"insertionCount"`
+	DeletionCount  int    `json:"deletionCount"`
 }
 
 var _ fmt.Stringer = &DiffSummaryRow{}

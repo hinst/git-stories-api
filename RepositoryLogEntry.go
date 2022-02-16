@@ -5,17 +5,17 @@ import (
 )
 
 type RepositoryLogEntry struct {
-	Time       time.Time
-	Parents    []ParentInfoEntry
-	CommitHash string
-	AuthorName string
+	Time       time.Time         `json:"time"`
+	Parents    []ParentInfoEntry `json:"parents"`
+	CommitHash string            `json:"commitHash"`
+	AuthorName string            `json:"authorName"`
 }
 
 type RepositoryLogEntries []RepositoryLogEntry
 
 type ParentInfoEntry struct {
-	CommitHash  string
-	DiffSummary []DiffSummaryRow
+	CommitHash string           `json:"commitHash"`
+	DiffRows   []DiffSummaryRow `json:"diffRows"`
 }
 
 func (rows RepositoryLogEntries) FindByCommitHash(commitHash string) *RepositoryLogEntry {
