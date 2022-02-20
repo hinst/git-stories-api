@@ -11,7 +11,7 @@ type RepositoryLogEntry struct {
 	AuthorName string            `json:"authorName"`
 }
 
-type RepositoryLogEntries []RepositoryLogEntry
+type RepositoryLogEntries []*RepositoryLogEntry
 
 type ParentInfoEntry struct {
 	CommitHash string           `json:"commitHash"`
@@ -21,7 +21,7 @@ type ParentInfoEntry struct {
 func (rows RepositoryLogEntries) FindByCommitHash(commitHash string) *RepositoryLogEntry {
 	for _, row := range rows {
 		if row.CommitHash == commitHash {
-			return &row
+			return row
 		}
 	}
 	return nil
